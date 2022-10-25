@@ -22,7 +22,7 @@ namespace Klausurvorbereitung_T21_sam_25_10_22
             }
             
             
-            Console.WriteLine("Gewählt Geschwindigkeit(m/s) und Zeit(s) (mit Enter key getrennt)");
+            Console.WriteLine("Gewählt Geschwindigkeit(km/h) und Zeit(h) (mit Enter key getrennt)");
             auto1.Fahren(Convert.ToDouble(Console.ReadLine()),Convert.ToInt32(Console.ReadLine()));
             auto1.Kilometerstand();
             // --------------- Auto ----------------------------------------
@@ -119,16 +119,16 @@ namespace Klausurvorbereitung_T21_sam_25_10_22
         }
         public void Kilometerstand()
         {
-            Console.WriteLine("Anzahl der zuruckgelegte Kilometer = " + Kilometerzähler);
+            Console.WriteLine("Anzahl der zuruckgelegte Kilometer = " + Kilometerzähler + "km");
         }
     }
     static class Physik
     {
-        private static double G = 9.81;
+        public readonly static double G = 9.81;
 
         public static double Wurfhöhe(double v0, double winkel)
         {
-            double maxhöhe = Math.Asin(winkel)*v0;
+            double maxhöhe = Math.Sin(winkel)*v0;
             
             return maxhöhe;
         }

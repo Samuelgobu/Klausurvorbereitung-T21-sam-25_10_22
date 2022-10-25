@@ -128,13 +128,15 @@ namespace Klausurvorbereitung_T21_sam_25_10_22
 
         public static double Wurfhöhe(double v0, double winkel)
         {
-            double maxhöhe = Math.Sin(winkel)*v0;
+            double zeit = v0 / G;
+            double maxhöhe = Math.Sin(winkel)*v0-(G*zeit);
             
             return maxhöhe;
         }
         public static double Wurfweite(double v0, double winkel)
         {
-            double weite = 0;
+            double zeit = v0 / G;
+            double weite = Math.Cos(winkel)*v0*zeit;
 
             return weite;
         }
